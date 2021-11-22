@@ -1,0 +1,33 @@
+#chosePaleteColor{
+    display:flex
+}
+
+
+.color{
+    border: 1px  solid black;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+#black{
+    background-color: black;
+    padding:30px;
+}
+#palette2{
+    background-color: blue;
+    padding:30px;
+}
+#palette3{
+    background-color: yellow;
+    padding:30px;
+}
+#palette4{
+    background-color: green;
+    padding:30px;
+}
+
+.pixel{
+    padding: 40px;
+    border: 1px solid black;
+    display: inline-block
+}
