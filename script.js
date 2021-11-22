@@ -32,6 +32,7 @@ pallete4Input.addEventListener('change', function(){
 
 function boardSize(){
     generateMatriz.addEventListener('click', function (event){
+        divPai.innerHTML=''
     creatPixels(boardSizeMatriz.value)
     
     })
