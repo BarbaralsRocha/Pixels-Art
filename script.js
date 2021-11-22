@@ -17,7 +17,7 @@ black.style.backgroundColor = 'black'
 
 
 pallete2Input.addEventListener('click', corRandomPalette2)
-function corRandomPalette2(){
+function corRandomPalette2(){ //referencia: https://wallacemaxters.com.br/blog/2021/02/20/como-gerar-cores-aleatorias-no-javascript
     let r = Math.random() * 255;
     let g = Math.random() * 255;
     let b = Math.random() * 255;
@@ -56,13 +56,15 @@ boardSize()
 
 function creatPixels(tableSize){
     if(tableSize == ""){
-        window.alert("Board inválido!");
+        return alert("Board inválido!");
     } else if (tableSize<5){
         tableSize =5;
+        
     }else if (tableSize>50){
         tableSize=50;
-    }else{
-        for(i=1;i<=tableSize;i++){
+    }
+    
+    for(i=1;i<=tableSize;i++){
             for(j=1;j<=tableSize;j++){
                 let elementosPixels = document.createElement('div')
                 elementosPixels.className='pixel'
@@ -70,12 +72,15 @@ function creatPixels(tableSize){
             }
             let br = document.createElement('br')
             divPai.appendChild(br)
-       }
-
     }
 
 }
 creatPixels(tableSize)
+
+function colorBlack{
+
+}
+
 
 function colorSelected(){
     let element = document.querySelectorAll('.color')
@@ -93,5 +98,24 @@ function colorSelected(){
 }
 colorSelected()
 
+function pixelColor(){
 
+    let pixel = document.querySelectorAll('.pixel')
+    for(i=0;i<pixel.length;i++){
+        pixel[i].addEventListener('click', function(event){
+            event.target.style.backgroundColor = colorPen
+        })
+    }
+}
+pixelColor()
+
+function clearBoard(){
+    let pixel = document.querySelectorAll('.pixel')
+        clearBackground.addEventListener('click', function(){
+            for(i=0;i<pixel.length;i++){
+            pixel[i].style.backgroundColor = 'white'
+        }
+    })
+}
+clearBoard()
 
