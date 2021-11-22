@@ -11,25 +11,22 @@
     <header>
         <h1 id="title">Paleta de Cores</h1>
     </header>
-    <button id='clear-board'>Limpar</button>
     <section>
         <div id= 'defineMatriz'>
  
-            <input type="number" id='board-size' value='5' placeholder="Defina o tamanho do quadro NxN<"><br>
+            <input type="number" id='board-size' value='5' min ='5' max ='50' placeholder="Defina o tamanho do quadro NxN<"><br>
             <button id='generate-board'>VQV</button>
 
         </div>
     </section>
     <section>
-        <div id="chosePaleteColor">
-            <label for="">Escolha a cor(inglês) da sua paleta</label><br>
-            <div id="inputPlaceholders">
-                <input type="text" id='pallete2Input' placeholder="Paleta 2"><br>
-                <input type="text" id='pallete3Input' placeholder="Paleta 3"><br>
-                <input type="text" id='pallete4Input' placeholder="Paleta 4"><br>
+        <div >
+            <div id="chosePaleteColor">
+                <button id='pallete2Input'>Paleta 2</button>
+                <button id='pallete3Input'>Paleta 3</button>
+                <button id='pallete4Input'>Paleta 4</button>
             </div>
-
-        </div>
+        <button id='clear-board'>Limpar</button>
         <div id='color-palette'>
             <div id='black' class='color selected'></div>
             <div id="palette2" class='color'></div>

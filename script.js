@@ -12,23 +12,38 @@ let generateMatriz = document.getElementById('generate-board')
 let tableSize = 5
 let divPai = document.getElementById('pixel-board')
 
-palette2.style.backgroundColor = 'blue'
-palette3.style.backgroundColor = 'yellow'
-palette4.style.backgroundColor = 'green'
+
 black.style.backgroundColor = 'black'
 
-pallete2Input.addEventListener('change', function(){
-    let color = pallete2Input.value
-    palette2.style.backgroundColor = color
-})
-pallete3Input.addEventListener('change', function(){
-    let color = pallete3Input.value
-    palette3.style.backgroundColor = color
-})
-pallete4Input.addEventListener('change', function(){
-    let color = pallete4Input.value
-    palette4.style.backgroundColor = color
-})
+
+pallete2Input.addEventListener('click', corRandomPalette2)
+function corRandomPalette2(){
+    let r = Math.random() * 255;
+    let g = Math.random() * 255;
+    let b = Math.random() * 255;
+    palette2.style.backgroundColor = `rgba(${r}, ${g}, ${b})`
+}
+corRandomPalette2()
+
+pallete3Input.addEventListener('click', corRandomPalette3)
+function corRandomPalette3(){
+    let r = Math.random() * 255;
+    let g = Math.random() * 255;
+    let b = Math.random() * 255;
+    palette3.style.backgroundColor = `rgba(${r}, ${g}, ${b})`
+}
+corRandomPalette3()
+
+pallete4Input.addEventListener('click', corRandomPalette4)
+function corRandomPalette4(){
+    let r = Math.random() * 255;
+    let g = Math.random() * 255;
+    let b = Math.random() * 255;
+    palette4.style.backgroundColor = `rgba(${r}, ${g}, ${b})`
+}
+corRandomPalette4()
+
+
 
 function boardSize(){
     generateMatriz.addEventListener('click', function (event){
@@ -40,17 +55,43 @@ function boardSize(){
 boardSize()
 
 function creatPixels(tableSize){
+    if(tableSize == ""){
+        window.alert("Board inválido!");
+    } else if (tableSize<5){
+        tableSize =5;
+    }else if (tableSize>50){
+        tableSize=50;
+    }else{
+        for(i=1;i<=tableSize;i++){
+            for(j=1;j<=tableSize;j++){
+                let elementosPixels = document.createElement('div')
+                elementosPixels.className='pixel'
+                divPai.appendChild(elementosPixels)
+            }
+            let br = document.createElement('br')
+            divPai.appendChild(br)
+       }
 
-    for(i=1;i<=tableSize;i++){
-        for(j=1;j<=tableSize;j++){
-            let elementosPixels = document.createElement('div')
-            elementosPixels.className='pixel'
-            divPai.appendChild(elementosPixels)
-        }
-        let br = document.createElement('br')
-        divPai.appendChild(br)
-   }
+    }
+
 }
 creatPixels(tableSize)
+
+function colorSelected(){
+    let element = document.querySelectorAll('.color')
+    for(i=0;i<element.length;i++){
+      element[i].addEventListener('click', function(event){
+            let element = document.querySelectorAll('.color')
+            for(i=0;i<element.length;i++){
+                element[i].classList.remove('selected')
+            }
+            event.target.classList.add('selected')
+            colorPen = event.target.style.backgroundColor
+        })
+    }
+    
+}
+colorSelected()
+
 
 
