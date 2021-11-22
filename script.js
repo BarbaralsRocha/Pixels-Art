@@ -56,7 +56,7 @@ boardSize()
 
 function creatPixels(tableSize){
     if(tableSize == ""){
-        return alert("Board inválido!");
+        alert("Board inválido!");
     } else if (tableSize<5){
         tableSize =5;
         
