@@ -77,10 +77,15 @@ function creatPixels(tableSize){
 }
 creatPixels(tableSize)
 
-function colorBlack{
-
+function colorBlack(){
+    let element = document.querySelectorAll('.color')
+        if(element[0].classList.contains('selected')){
+            colorPen = 'black'
+        } 
 }
 
+colorBlack()
+pixelColor()
 
 function colorSelected(){
     let element = document.querySelectorAll('.color')
