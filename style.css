@@ -1,7 +1,12 @@
+
+
 #chosePaleteColor{
     display:flex
 }
 
+#defineMatriz{
+    display: flex;
+}
 
 .color{
     border: 1px  solid black;
@@ -27,7 +32,9 @@
 }
 
 .pixel{
+    background-color: white;
     padding: 40px;
     border: 1px solid black;
     display: inline-block
 }
+
