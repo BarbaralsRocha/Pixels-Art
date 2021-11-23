@@ -4,7 +4,8 @@ let pallete4Input=document.getElementById('pallete4Input')
 let palette2=document.getElementById('palette2')
 let palette3=document.getElementById('palette3')
 let palette4=document.getElementById('palette4')
-let black=document.getElementById('black')
+let black=document.getElementById('blackInput')
+let blackInput=document.getElementById('black')
 let clearBackground=document.getElementById('clear-board')
 let colorPen = ''
 let boardSizeMatriz = document.getElementById('board-size')
@@ -13,7 +14,10 @@ let tableSize = 5
 let divPai = document.getElementById('pixel-board')
 
 
-black.style.backgroundColor = 'black'
+
+blackInput.addEventListener('click', function(event){
+    event.target.style.backgroundColor = 'black'
+})
 
 
 pallete2Input.addEventListener('click', corRandomPalette2)
@@ -46,23 +50,27 @@ corRandomPalette4()
 
 
 function boardSize(){
-    generateMatriz.addEventListener('click', function (event){
-        divPai.innerHTML=''
-    creatPixels(boardSizeMatriz.value)
-    
+    generateMatriz.addEventListener('click', function (){
+        if(boardSizeMatriz.value == ""){
+            alert("Board inválido!")
+        }
+        else {
+            divPai.innerHTML=''
+            creatPixels(boardSizeMatriz.value)
+        }
     })
 }
 boardSize()
 
 function creatPixels(tableSize){
-    if(tableSize == ""){
-        alert("Board inválido!");
-    } else if (tableSize<5){
+
+if (tableSize<5){
         tableSize =5;
-        
+            
     }else if (tableSize>50){
         tableSize=50;
     }
+    
     
     for(i=1;i<=tableSize;i++){
             for(j=1;j<=tableSize;j++){
