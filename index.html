@@ -14,7 +14,7 @@
     </header>
 
     <section>
-        <div >
+        <div id='paletas'>
             <div id="chosePaleteColor">
                 <button id='blackInput'>Paleta 1</button>
                 <button id='pallete2Input'>Paleta 2</button>
@@ -22,26 +22,25 @@
                 <button id='pallete4Input'>Paleta 4</button>
             </div>
 
-        <div id='color-palette'>
-            <div id='black' class='color selected'></div>
-            <div id="palette2" class='color'></div>
-            <div id='palette3' class='color'></div>
-            <div id='palette4' class='color'></div>
-
+            <div id='color-palette'>
+                <div id='black' class='color selected'></div>
+                <div id="palette2" class='color'></div>
+                <div id='palette3' class='color'></div>
+                <div id='palette4' class='color'></div>
+            </div>
         </div>
     </section>
 
     <section id="clear-input">
         <button id='clear-board'>Limpar</button>
         <div id= 'defineMatriz'>
-            <input type="number" id='board-size' value='5' min ='1' max ='50' placeholder="Defina o tamanho do quadro NxN<"><br>
+            <input type="number" id='board-size'  min ='1' max ='50' placeholder="Defina o tamanho do quadro NxN<"><br>
             <button id='generate-board'>VQV</button>
 
         </div>
     </section>
-    <section>
+    <section id="pixel">
         <div id='pixel-board'></div>
-
     </section>
     <script src="script.js"></script>
 </body>

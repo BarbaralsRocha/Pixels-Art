@@ -10,7 +10,6 @@ let clearBackground=document.getElementById('clear-board')
 let colorPen = ''
 let boardSizeMatriz = document.getElementById('board-size')
 let generateMatriz = document.getElementById('generate-board')
-let tableSize = 5
 let divPai = document.getElementById('pixel-board')
 
 
@@ -50,27 +49,23 @@ corRandomPalette4()
 
 
 function boardSize(){
-    generateMatriz.addEventListener('click', function (){
-        if(boardSizeMatriz.value == ""){
-            alert("Board inválido!")
+    generateMatriz.addEventListener('click', function (event){
+        if (boardSizeMatriz.value ==''){
+            alert('Board inválido!')
         }
-        else {
-            divPai.innerHTML=''
-            creatPixels(boardSizeMatriz.value)
-        }
+        divPai.innerHTML=''
+        creatPixels(boardSizeMatriz.value)
     })
 }
 boardSize()
 
 function creatPixels(tableSize){
-
-if (tableSize<5){
+    if (tableSize<5){
         tableSize =5;
-            
+        
     }else if (tableSize>50){
         tableSize=50;
-    }
-    
+    } 
     
     for(i=1;i<=tableSize;i++){
             for(j=1;j<=tableSize;j++){
@@ -83,7 +78,7 @@ if (tableSize<5){
     }
 
 }
-creatPixels(tableSize)
+creatPixels(5)
 
 function colorBlack(){
     let element = document.querySelectorAll('.color')
